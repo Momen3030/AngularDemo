@@ -1,0 +1,34 @@
+<table class="table">
+    <thead>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Quntaity</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prd of products; let i=index" [ngStyle]="{'color':(prd.quntity==0)?'red':'',
+            'background-color':(prd.quntity==1)?'orange':'','font-size':(prd.quntity>1)?'22px':''}">
+            <td>{{i+1}}</td>
+            <td>{{prd.name}}</td>
+            <td>
+                <!-- <span *ngIf="prd.quntity==0">Out of Stock </span>
+                <span *ngIf="prd.quntity==1">Last Item</span>
+                <span *ngIf="prd.quntity>1">{{prd.quntity}}</span> -->
+                <span [ngSwitch]="prd.quntity">
+                    <p *ngSwitchCase="0">
+                        Out of Stock
+                    </p>
+                    <p *ngSwitchCase="1">
+                        Last Item
+                    </p>
+                    <p *ngSwitchDefault>
+                        {{prd.quntity}}
+
+                    </p>
+                </span>
+            </td>
+            <td>{{prd.price}}</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+<h3> {{title}} </h3>
+<p> Company : {{cInfo.name}} !!!!</p>
+<img src="{{cInfo.logo}}">
+<hr> using property Binding : search about value cInfo.logo
+<img [src]="cInfo.logo">
+<hr> search about path cInfo.logo
+<img src="cInfo.logo">
+<hr>
+<button class="btn btn-info" (click)="Toggle()"> Toggle </button>
+<ul *ngIf="isServiceDisplayed">
+    <li *ngFor="let serv of cInfo.services">{{serv}}</li>
+
+</ul>
