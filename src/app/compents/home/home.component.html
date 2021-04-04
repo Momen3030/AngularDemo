@@ -1,6 +1,6 @@
-<h3> {{title}} </h3>
+<h3 appHighlight> {{title}} </h3>
 <p> Company : {{cInfo.name|uppercase}} !!!!</p>
-<div> Capital {{cInfo.cabital|currency}} </div>
+<div appHighlight> Capital {{cInfo.cabital|currency}} </div>
 <div> Date : {{cInfo.establishDate|date:'short'}} </div>
 <img src="{{cInfo.logo}}">
 <hr> using property Binding : search about value cInfo.logo
@@ -8,8 +8,8 @@
 <hr> search about path cInfo.logo
 <img src="cInfo.logo">
 <hr>
-<button class="btn btn-info" (click)="Toggle()"> Toggle </button>
+<button appHighlight class="btn btn-info" (click)="Toggle()"> Toggle </button>
 <ul *ngIf="isServiceDisplayed">
-    <li *ngFor="let serv of cInfo.services">{{serv}}</li>
+    <li appHighlight *ngFor="let serv of cInfo.services">{{serv}}</li>
 
 </ul>

@@ -9,6 +9,7 @@ import { FooterComponent } from './compents/footer/footer.component';
 import { HomeComponent } from './compents/home/home.component';
 import { ProductsComponent } from './compents/products/products.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ContentComponent,
     FooterComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
