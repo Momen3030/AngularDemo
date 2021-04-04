@@ -1,3 +1,9 @@
+one way binding : <input [value]="testBind" name="Fname">
+<hr> Two Way Binding: <input [(ngModel)]="testBind" name="Lname">
+<hr>
+<div> Test : {{testBind|uppercase}} </div>
+<hr>
+
 <table class="table">
     <thead>
         <th>No.</th>
@@ -6,10 +12,11 @@
         <th>Price</th>
     </thead>
     <tbody>
-        <tr *ngFor="let prd of products; let i=index" [ngStyle]="{'color':(prd.quntity==0)?'red':'',
-            'background-color':(prd.quntity==1)?'orange':'','font-size':(prd.quntity>1)?'22px':''}">
+        <!-- <tr *ngFor="let prd of products; let i=index" [ngStyle]="{'color':(prd.quntity==0)?'red':'',
+            'background-color':(prd.quntity==1)?'orange':'','font-size':(prd.quntity>1)?'22px':''}"> -->
+        <tr *ngFor="let prd of products; let i=index" [ngClass]="{'text-danger':(prd.quntity==0),'cls':(prd.quntity==1)}">
             <td>{{i+1}}</td>
-            <td>{{prd.name}}</td>
+            <td>{{prd.name|uppercase}}</td>
             <td>
                 <!-- <span *ngIf="prd.quntity==0">Out of Stock </span>
                 <span *ngIf="prd.quntity==1">Last Item</span>
@@ -27,7 +34,7 @@
                     </p>
                 </span>
             </td>
-            <td>{{prd.price}}</td>
+            <td>{{prd.price|currency:"USD":true}}</td>
         </tr>
 
     </tbody>

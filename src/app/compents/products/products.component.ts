@@ -8,15 +8,17 @@ import { Iproduct } from 'src/app/model/interfaces/iproduct';
 })
 export class ProductsComponent {
   products: Iproduct[];
+  testBind: string;
   constructor() {
+    this.testBind = "php";
     this.products = [
-      { id: 3, name: "Iphone 7", price: 6000, quntity: 3 },
-      { id: 5, name: "Nokia X", price: 4000, quntity: 0 },
-      { id: 6, name: "Tab 1 ", price: 2000, quntity: 1 },
-      { id: 7, name: "Ipda ", price: 6000, quntity: 0 },
-      { id: 9, name: "Dell Lab", price: 6000, quntity: 3 },
+      { id: 3, name: "iphone 7", price: 6000, quntity: 3 },
+      { id: 5, name: "nokia X", price: 4000, quntity: 0 },
+      { id: 6, name: "tab 1 ", price: 2000, quntity: 1 },
+      { id: 7, name: "ipda ", price: 6000, quntity: 0 },
+      { id: 9, name: "dell Lab", price: 6000, quntity: 3 },
       { id: 10, name: "lenovo Lab", price: 6000, quntity: 2 },
-      { id: 12, name: "Iphone 12", price: 25000, quntity: 1 }
+      { id: 12, name: "iphone 12", price: 25000, quntity: 1 }
     ]
   }
 

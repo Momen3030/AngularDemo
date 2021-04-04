@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   isServiceDisplayed: boolean;
   constructor() {
     this.isServiceDisplayed = true;
-    this.cInfo = new CompanyInfo(1, "PHP Company",
+    this.cInfo = new CompanyInfo(1, "php company",
       "https://dummyimage.com/300x300/ebdfeb/2c35b8&text=Test+Demo"
       , ["HR", "Marketing", "Seles"],
       100000,

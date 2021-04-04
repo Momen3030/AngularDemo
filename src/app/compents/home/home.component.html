@@ -1,5 +1,7 @@
 <h3> {{title}} </h3>
-<p> Company : {{cInfo.name}} !!!!</p>
+<p> Company : {{cInfo.name|uppercase}} !!!!</p>
+<div> Capital {{cInfo.cabital|currency}} </div>
+<div> Date : {{cInfo.establishDate|date:'short'}} </div>
 <img src="{{cInfo.logo}}">
 <hr> using property Binding : search about value cInfo.logo
 <img [src]="cInfo.logo">

@@ -8,6 +8,7 @@ import { ContentComponent } from './compents/content/content.component';
 import { FooterComponent } from './compents/footer/footer.component';
 import { HomeComponent } from './compents/home/home.component';
 import { ProductsComponent } from './compents/products/products.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductsComponent } from './compents/products/products.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
