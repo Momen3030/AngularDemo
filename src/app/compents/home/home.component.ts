@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CompanyInfo } from 'src/app/model/classes/company-info';
 
 @Component({
@@ -6,7 +6,7 @@ import { CompanyInfo } from 'src/app/model/classes/company-info';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges {
   title: string;
   cInfo: CompanyInfo;
   isServiceDisplayed: boolean;
@@ -18,10 +18,17 @@ export class HomeComponent implements OnInit {
       100000,
       new Date());
     this.title = " ITI PHP Q2";
+    console.log("in constructor ");
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    console.log("in ngOnChanges ");
+
   }
+  ngOnInit(): void {
+    console.log("in ngOnInit ");
+  }
+
 
 
   Toggle() {

@@ -1,6 +1,6 @@
 <h3 appHighlight> {{title}} </h3>
 <p> Company : {{cInfo.name|uppercase}} !!!!</p>
-<div appHighlight> Capital {{cInfo.cabital|currency}} </div>
+<div appHighlight> Capital: {{cInfo.cabital|usdtoEgp:14}} </div>
 <div> Date : {{cInfo.establishDate|date:'short'}} </div>
 <img src="{{cInfo.logo}}">
 <hr> using property Binding : search about value cInfo.logo

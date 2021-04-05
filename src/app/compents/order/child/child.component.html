@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <th>No.</th>
+        <th>Name</th>
+        <th> Avilable Quntaity</th>
+        <th> Needed Quntaity</th>
+        <th>Price</th>
+        <th>Buy</th>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let prd of getProductsByCatID(); let i=index">
+            <td>{{i+1}}</td>
+            <td>{{prd.name}}</td>
+            <td> {{prd.quntity}}</td>
+            <td> <input #Pcount type="number"></td>
+            <td>{{prd.price}}</td>
+            <td><button class="btn btn-primary" (click)="TotalPrice(prd.price,Pcount.value)">Buy</button></td>
+        </tr>
+
+    </tbody>
+</table>
+<div class="bg-info">
+    Total Price in Child : {{total}}
+</div>

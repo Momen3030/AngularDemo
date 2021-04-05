@@ -10,6 +10,9 @@ import { HomeComponent } from './compents/home/home.component';
 import { ProductsComponent } from './compents/products/products.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './directives/highlight.directive';
+import { UsdtoEgpPipe } from './pipes/usdto-egp.pipe';
+import { ParentComponent } from './compents/order/parent/parent.component';
+import { ChildComponent } from './compents/order/child/child.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HighlightDirective } from './directives/highlight.directive';
     FooterComponent,
     HomeComponent,
     ProductsComponent,
-    HighlightDirective
+    HighlightDirective,
+    UsdtoEgpPipe,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
