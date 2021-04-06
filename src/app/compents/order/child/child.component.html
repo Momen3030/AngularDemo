@@ -6,6 +6,8 @@
         <th> Needed Quntaity</th>
         <th>Price</th>
         <th>Buy</th>
+        <th>More (html)</th>
+        <th>More (code)</th>
     </thead>
     <tbody>
 
@@ -16,6 +18,8 @@
             <td> <input #Pcount type="number"></td>
             <td>{{prd.price}}</td>
             <td><button class="btn btn-primary" (click)="TotalPrice(prd.price,Pcount.value)">Buy</button></td>
+            <td><a class="btn btn-info" [routerLink]="['/Product',prd.id]">More(html)</a></td>
+            <td><a class="btn btn-danger" (click)="More(prd.id)">More(code)</a></td>
         </tr>
 
     </tbody>

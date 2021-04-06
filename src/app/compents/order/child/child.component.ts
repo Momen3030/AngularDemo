@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Iproduct } from 'src/app/model/interfaces/iproduct';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-child',
@@ -12,18 +14,11 @@ export class ChildComponent implements OnInit, OnChanges {
   @Output() TotalPriceChangedEvent: EventEmitter<number>;
   products: Iproduct[];
   total: number;
-  constructor() {
+
+  constructor(private _prdServ: ProductService, private _router: Router) {
     this.TotalPriceChangedEvent = new EventEmitter<number>();
     this.total = 0;
-    this.products = [
-      { id: 3, name: "iphone 7", price: 6000, quntity: 3, categoryID: 1 },
-      { id: 5, name: "nokia X", price: 4000, quntity: 0, categoryID: 1 },
-      { id: 6, name: "tab 1 ", price: 2000, quntity: 1, categoryID: 2 },
-      { id: 7, name: "ipda ", price: 6000, quntity: 0, categoryID: 2 },
-      { id: 9, name: "dell Lab", price: 6000, quntity: 3, categoryID: 3 },
-      { id: 10, name: "lenovo Lab", price: 6000, quntity: 2, categoryID: 3 },
-      { id: 12, name: "iphone 12", price: 25000, quntity: 1, categoryID: 1 }
-    ]
+    this.products = this._prdServ.getAllProducts();
     console.log(`constructor ${this.selectedCatID}`);
 
   }
@@ -37,12 +32,8 @@ export class ChildComponent implements OnInit, OnChanges {
     console.log(` ngOnInit ${this.selectedCatID}`);
   }
 
-  ///return filter array 
   getProductsByCatID(): Iproduct[] {
-    ///filter search in array and return arrary filtered
-    return this.products.filter((prd) => {
-      return prd.categoryID == this.selectedCatID;
-    })
+    return this._prdServ.getProductsByCatID(this.selectedCatID);
   }
 
   TotalPrice(price, count) {
@@ -50,5 +41,8 @@ export class ChildComponent implements OnInit, OnChanges {
     this.TotalPriceChangedEvent.emit(this.total);
     console.log(this.total);
 
+  }
+  More(id) {
+    this._router.navigate(['/Product', id])
   }
 }

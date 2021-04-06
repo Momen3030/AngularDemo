@@ -13,6 +13,8 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UsdtoEgpPipe } from './pipes/usdto-egp.pipe';
 import { ParentComponent } from './compents/order/parent/parent.component';
 import { ChildComponent } from './compents/order/child/child.component';
+import { PagenotFoundComponent } from './compents/pagenot-found/pagenot-found.component';
+import { ProductDetailsComponent } from './compents/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ChildComponent } from './compents/order/child/child.component';
     HighlightDirective,
     UsdtoEgpPipe,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    PagenotFoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
