@@ -1,0 +1,26 @@
+<form [formGroup]="loginFrom" (ngSubmit)="Login()">
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" formControlName="Email" class="form-control" name="mail">
+        <div class="alert alert-danger" role="alert" *ngIf="loginFrom.controls['Email'].invalid &&
+            loginFrom.controls['Email'].touched">
+            <strong *ngIf="loginFrom.controls['Email'].errors.required"> Email
+                is required </strong>
+            <strong *ngIf="loginFrom.controls['Email'].errors.email"> must be an
+                Email ex:@ ,.,com </strong>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" formControlName="Password" class="form-control" name="pass">
+        <div class="alert alert-danger" role="alert" *ngIf="loginFrom.controls['Password'].invalid &&
+            loginFrom.controls['Password'].touched">
+            <strong *ngIf="loginFrom.controls['Password'].errors.required">
+                Password is required </strong>
+            <strong *ngIf="loginFrom.controls['Password'].errors.minlength">
+                Password more than 3 letters </strong>
+        </div>
+        <!-- {{loginFrom.controls['Password'].errors|json}} -->
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="loginFrom.invalid">Login</button>
+</form>

@@ -1,0 +1,21 @@
+<a class="btn btn-info" [routerLink]="['/Newproduct']">Add Product </a>
+<table class="table">
+    <thead>
+        <th>No.</th>
+        <th>Name</th>
+        <th> Avilable Quntaity</th>
+        <th>Price</th>
+        <th>More (html)</th>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let prd of products; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{prd.name}}</td>
+            <td> {{prd.quantity}}</td>
+            <td>{{prd.price}}</td>
+            <td><a class="btn btn-info" [routerLink]="['/Apiproduct',prd.id]">More(html)</a></td>
+        </tr>
+
+    </tbody>
+</table>
